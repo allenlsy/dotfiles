@@ -51,13 +51,8 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # postgres config
 export PGHOST=localhost
 
-# config class47 aws service
-export AWS_ACCESS_KEY_ID="AKIAIY6BTF7PYJ27XUIQ"
-export AWS_SECRET_ACCESS_KEY="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"
-export AWS_S3_BUCKET="class47asia"
-
 alias prodcomp="RAILS_ENV=production bundle exec rake assets:precompile"
 alias gpcap="git push -f && cap deploy"
+alias Rtest="RAILS_ENV=test"
+alias ta="tmux attach -t"
 export LANG=en_US.UTF-8
-
-source ~/.tcasia.sh

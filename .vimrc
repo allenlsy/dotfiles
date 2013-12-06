@@ -1,7 +1,7 @@
 call pathogen#infect()
 
 syntax on
-colorscheme Tomorrow-Night-Bright
+colorscheme Tomorrow-Night
 set number
 set expandtab
 set tabstop=4
@@ -21,8 +21,8 @@ let g:NERDTreeDirArrows=0
 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-set tags+=/Users/allenlsy/.vim/tags/usr_include
-set tags+=/Users/allenlsy/.vim/tags/cpp
+" set tags+=/Users/allenlsy/.vim/tags/usr_include
+" set tags+=/Users/allenlsy/.vim/tags/cpp
 
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS

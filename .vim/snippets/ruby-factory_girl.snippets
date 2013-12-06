@@ -1,11 +1,13 @@
 # Factory girl
 
 snippet Fd
-	Factory.define :${1:model} do |factory|
-		factory.${3:attribute} ${4}
+	FactoryGirl.define do |factory|
+		factory ${1:model} do 
+			${2}
+		end
 	end
 snippet Fdc
-	Factory.define :${1:obj}, :class => ${2:Class} do |factory|
+	FactoryGirl.define :${1:obj}, :class => ${2:Class} do |factory|
 		factory.${3:attribute} ${4}
 	end
 snippet bp
@@ -20,7 +22,9 @@ snippet S
 	Sham.${1:attribute} { Faker::${2:Module}.${3:method} }
 
 snippet F
-	Factory(:${1:factory})${2}
+	factory :${1:factory} do
+		${2}
+	end
 snippet Fb
 	Factory.build(:${1:factory})${2}
 snippet Fc

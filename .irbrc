@@ -23,6 +23,14 @@ rescue LoadError => E
 end
   
 begin
+  require 'wirb'
+  Wirb.start
+rescue LoadError => E
+  p E
+end
+  
+begin
+  require 'rubygems'
   require 'wirble'
   Wirble.init
   Wirble.colorize
