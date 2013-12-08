@@ -433,3 +433,4 @@ fun s:UpdateVars()
 	let g:snipPos[s:curPos][2] = newWordLen
 endf
 " vim:noet:sw=4:ts=4:ft=vim
+

@@ -3,15 +3,17 @@ dotfiles
 
 dotfiles from allenlsy.
 
-### To commit local dotfiles
+### One step commit local dotfiles
 
-    ./commit.sh
+It will upload local configs to git repo. No `cp` and `git` commands required.
+
+    sudo ./commit.sh
 
 ### To update local dotfiles
 
-    git clone https://github.com/allenlsy/dotfiles
-    cd dotfiles
-    cp ./* ~
+It will pull the latest version from github and `cp` to your home directory. No `cp` and `git` commands required.
+
+    sudo ./update.sh
 
 
 
