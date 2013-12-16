@@ -4,13 +4,26 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-cp -R ~/.gitconfig ~/.gitignore ~/.gvimrc ~/.irbrc ~/.oh-my-zsh ~/.tmux.conf ~/.vim ~/.vimrc ~/.zshrc .
+DIR=$(pwd)
 
-# remove .git
-sudo rm -R .oh-my-zsh/.git
+# .vim
+cd ~/.vim
+git add .
+git commit -a
+git push
 
+# .oh-my-zsh
+cd ~/.oh-my-zsh
+git add .
+git commit -a
+git push
+
+# other dotfiles
+cd ~
+cp .gitconfig .gitignore .gvimrc .irbrc .tmux.conf .vimrc .zshrc $DIR
+
+cd $DIR
 git add --all
 git commit -a
-
 git push -f
 

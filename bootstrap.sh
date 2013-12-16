@@ -5,4 +5,4 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 cp -R ./* ~
-rm -R ~/.git
+# rm -R ~/.git

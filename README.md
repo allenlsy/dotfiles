@@ -3,17 +3,13 @@ dotfiles
 
 dotfiles from allenlsy.
 
-### One step commit local dotfiles
+### To apply the configuration on your machine
+    
+    git clone --recursive https://github.com/allenlsy/dotfiles
+    cd dotfiles
+    sudo ./bootstrap.sh
 
-It will upload local configs to git repo. No `cp` and `git` commands required.
 
-    sudo ./commit.sh
-
-### To update local dotfiles
-
-It will pull the latest version from github and `cp` to your home directory. No `cp` and `git` commands required.
-
-    sudo ./update.sh
 
 
 
