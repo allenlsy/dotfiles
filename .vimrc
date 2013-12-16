@@ -85,11 +85,3 @@ augroup BWCCreateDir
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
-
-" au VimEnter * NERDTree
-
-" vim-nerdtree-tabs config
-" check https://github.com/jistr/vim-nerdtree-tabs
-let g:nerdtree_tabs_smart_startup_focus=2
-
-

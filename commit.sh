@@ -4,7 +4,7 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-cp -R ~/.vim ~/.oh-my-zsh ~/.vimrc ~/.zshrc ~/.git* ~/.gvimrc ~/.irbrc ~/.tmux.conf .
+cp -R ~/.gitconfig ~/.gitignore ~/.gvimrc ~/.irbrc ~/.oh-my-zsh ~/.tmux.conf ~/.vim ~/.vimrc ~/.zshrc .
 
 # remove .git
 sudo rm -R .oh-my-zsh/.git

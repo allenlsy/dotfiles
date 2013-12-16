@@ -1,7 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/allenlsy/.rvm/gems/ruby-2.0.0-p247/gems/rainbows-4.5.0'
-let g:netrw_dirhist_2='/Users/allenlsy/project/allenlsy.github.com'
-let g:netrw_dirhist_3='/Users/allenlsy/projects/rails/needsg'
-let g:netrw_dirhist_4='/Users/allenlsy/.vim'
-let g:netrw_dirhist_5='/Users/allenlsy/.rvm/gems/ruby-1.9.3-p448/gems/jekyll-tagging-0.5.0'
+let g:netrw_dirhist_cnt =0
