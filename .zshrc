@@ -55,4 +55,8 @@ alias prodcomp="RAILS_ENV=production bundle exec rake assets:precompile"
 alias gpcap="git push -f && cap deploy"
 alias Rtest="RAILS_ENV=test"
 alias ta="tmux attach -t"
+alias trs="tmux rename-session"
 export LANG=en_US.UTF-8
+
+if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
+
