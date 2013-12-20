@@ -7,18 +7,21 @@ fi
 DIR=$(pwd)
 
 # .vim
+echo "Committing .vim..."
 cd ~/.vim
 git add .
 git commit -a
 git push
 
 # .oh-my-zsh
+echo "Committing .oh-my-zsh..."
 cd ~/.oh-my-zsh
 git add .
 git commit -a
 git push
 
 # other dotfiles
+echo "Committing other dotfiles..."
 cd ~
 cp .gitconfig .gitignore .gvimrc .irbrc .tmux.conf .vimrc .zshrc $DIR
 
