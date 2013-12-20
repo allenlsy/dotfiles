@@ -34,6 +34,7 @@
     ca = commit -a --amend
     cm = commit -am
     aa = add . --all
+    tf = push -f
 [push]
 	default = simple
 [core]

@@ -4,5 +4,9 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-cp -R ./* ~
-# rm -R ~/.git
+cp -R .gitconfig .gitignore .gvimrc .irbrc .oh-my-zsh .tmux.conf .vim .vimrc .zshrc ~
+
+# apply tmux config
+tmux source ~/.tmux.conf
+
+rm -R ~/.git
