@@ -35,6 +35,8 @@
     cm = commit -am
     aa = add . --all
     tf = push -f
+    sm = submodule
+    sma = submodule add
 [push]
 	default = simple
 [core]
