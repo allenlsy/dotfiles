@@ -21,6 +21,7 @@
     log = true
     tool = vimdiff
 
+
 [alias]
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
@@ -28,11 +29,13 @@
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
     # `git di $number` shows the diff between the state `$number` revisions ago and the current state
-    di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"    
+    di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
     st = status -s
+    br = branch
     co = checkout
     ca = commit -a --amend
     cm = commit -am
+    cmt = commit
     aa = add . --all
     tf = push -f
     sm = submodule
