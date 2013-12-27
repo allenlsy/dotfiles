@@ -1,15 +1,12 @@
 #!/bin/bash
 
-# check sudo
-if [ "$(id -u)" != "0" ]; then
-   echo "This script must be run as root" 1>&2
-   exit 1
-fi
+yellow='\033[01;33m'
+NC='\033[00;00m' # No Color
 
 DIR=$(pwd)
 
 # .vim
-echo "Committing .vim..."
+echo -e "${yellow}[ Committing .vim... ]${NC}"
 cd ~/.vim
 git pull --rebase
 git aa
@@ -17,7 +14,7 @@ git commit -a
 git push
 
 # .oh-my-zsh
-echo "Committing .oh-my-zsh..."
+echo -e "${yellow}[ Committing .oh-my-zsh... ]${NC}"
 cd ~/.oh-my-zsh
 git pull --rebase
 git aa
@@ -25,11 +22,12 @@ git commit -a
 git push
 
 # other dotfiles
-echo "Committing other dotfiles..."
+echo -e "${yellow}[ Copying other dotfiles... ]${NC}"
 cd ~
 cp .gitconfig .gitignore .gvimrc .irbrc .tmux.conf .vimrc .zshrc $DIR
 
 cd $DIR
+echo -e "${yellow}[ Committing current repo... ]${NC}"
 git pull --rebase
 git submodule foreach git pull origin master
 git aa
