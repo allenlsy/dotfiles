@@ -56,8 +56,7 @@ alias gpcap="git push -f && cap deploy"
 alias Rtest="RAILS_ENV=test"
 alias ta="tmux attach -t"
 alias trs="tmux rename-session"
-alias cpd="cap production deploy"
-export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
 
