@@ -86,7 +86,9 @@ augroup BWCCreateDir
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
 
-au BufNewFile,BufRead *.hbs set filetype=html
+au BufNewFile,BufRead *.hbs set filetype=html " handlebar template as html
+au FileType coffee :setlocal sw=2 ts=2 sts=2 " tab size=2 for coffeescript
+
 
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_smart_startup_focus=2
