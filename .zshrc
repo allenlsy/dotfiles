@@ -57,7 +57,9 @@ alias Rtest="RAILS_ENV=test"
 alias ta="tmux attach -t"
 alias trs="tmux rename-session"
 alias cpd="cap production deploy"
-export LANG=en_US.UTF-8
+alias be='bundle exec'
+alias mex="open -a Emacs"
+export LANG=en_US.UTF-8 # This is for jekyll build
 
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
 
