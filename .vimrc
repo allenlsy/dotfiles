@@ -58,6 +58,8 @@ set helplang=cn
 set hlsearch
 
 set cursorline
+:highlight CursorColumn cterm=NONE ctermbg=darkgray ctermfg=white guibg=darkgray guifg=white
+set cursorcolumn
 
 " vundle configuration
 
@@ -87,8 +89,11 @@ augroup BWCCreateDir
 augroup END
 
 au BufNewFile,BufRead *.hbs set filetype=html " handlebar template as html
+au BufNewFile,BufRead *.scss set filetype=css " enable rainbow mode in scss file
 au FileType coffee :setlocal sw=2 ts=2 sts=2 " tab size=2 for coffeescript
 
 
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_smart_startup_focus=2
+
+let g:cssColorVimDoNotMessMyUpdatetime = 1

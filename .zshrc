@@ -60,6 +60,7 @@ alias cpd="cap production deploy"
 alias be='bundle exec'
 alias mex="open -a Emacs"
 export LANG=en_US.UTF-8 # This is for jekyll build
+alias g="gradle"
 
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
 
