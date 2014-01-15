@@ -61,6 +61,7 @@ alias be='bundle exec'
 alias mex="open -a Emacs"
 export LANG=en_US.UTF-8 # This is for jekyll build
 alias g="gradle"
+alias gitwc="git ls-files | xargs cat | wc -l"
 
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
 

@@ -1,13 +1,13 @@
 call pathogen#infect()
 
 syntax on
-colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night-Bright
 set number
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set autoindent
-
+set bg=dark
 set pastetoggle=<F2>
 set showmode
 
@@ -58,8 +58,16 @@ set helplang=cn
 set hlsearch
 
 set cursorline
-:highlight CursorColumn cterm=NONE ctermbg=darkgray ctermfg=white guibg=darkgray guifg=white
+:highlight CursorColumn cterm=NONE ctermbg=darkgray ctermfg=white guibg=gray guifg=white
 set cursorcolumn
+
+" augroup Cursor
+"   au!
+"   au VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
+"   au WinLeave * setlocal nocursorcolumn
+"   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+"   au WinLeave * setlocal nocursorline
+" augroup END
 
 " vundle configuration
 
@@ -97,3 +105,11 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_smart_startup_focus=2
 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
+
+" Autoload RaibowParentheses. For performance reason, I disabled it by default
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
+" au Syntax * RainbowParenthesesLoadChevrons
+
