@@ -1,3 +1,4 @@
+set t_Co=256
 call pathogen#infect()
 
 syntax on
@@ -104,7 +105,7 @@ au FileType coffee :setlocal sw=2 ts=2 sts=2 " tab size=2 for coffeescript
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_smart_startup_focus=2
 
-let g:cssColorVimDoNotMessMyUpdatetime = 1
+let g:cssColorVimDoNotMessMyUpdatetime = 10
 
 " Autoload RaibowParentheses. For performance reason, I disabled it by default
 " au VimEnter * RainbowParenthesesToggle
