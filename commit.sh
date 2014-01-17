@@ -8,6 +8,7 @@ DIR=$(pwd)
 # .vim
 echo -e "${yellow}[ Committing .vim... ]${NC}"
 cd ~/.vim
+cp ~/.vimrc .
 git pull --rebase
 git aa
 git commit -a
