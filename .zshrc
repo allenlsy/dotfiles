@@ -47,6 +47,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=$PATH:/Users/allenlsy/projects/play/framework:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/allenlsy/.rvm/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=/opt/local/bin:$PATH
+export PATH=/Users/allenlsy/bin:$PATH
+export PATH=/Users/allenlsy/android\ sdk/tools:/Users/allenlsy/android\ sdk/platform-tools:$PATH
 
 # postgres config
 export PGHOST=localhost
@@ -64,4 +67,19 @@ alias g="gradle"
 alias gitwc="git ls-files | xargs cat | wc -l"
 
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
+
+# difffork git diff
+# export GIT_EXTERNAL_DIFF="/Users/allenlsy/gitdfdiff.sh"
+
+# support for ctags
+# alias ctags="/usr/bin/ctags"
+export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+alias STARTPG='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+
+# for compiling android
+# http://source.android.com/source/initializing.html
+ulimit -S -n 1024
+
+PERL_MB_OPT="--install_base \"/Users/allenlsy/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/allenlsy/perl5"; export PERL_MM_OPT;
 
