@@ -45,6 +45,7 @@
 [core]
 	excludesfile = /Users/allenlsy/.gitignore
     mergetool = vimdiff
+	quotepath = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

@@ -25,7 +25,7 @@ git push
 # other dotfiles
 echo -e "${yellow}[ Copying other dotfiles... ]${NC}"
 cd ~
-cp .gitconfig .gitignore .gvimrc .irbrc .tmux.conf .vimrc .zshrc $DIR
+cp .gitconfig .gitignore .gvimrc .irbrc .tmux.conf .vimrc .zshrc .pryrc $DIR
 
 cd $DIR
 echo -e "${yellow}[ Committing current repo... ]${NC}"
