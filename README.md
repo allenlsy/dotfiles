@@ -10,6 +10,13 @@ dotfiles from allenlsy.
     sudo ./bootstrap.sh
 
 
+### Post work
+
+#### Change `~./.gitconfig`
+
+change `[user]` part and `[core]` and so on. 
+
+
 
 
 
