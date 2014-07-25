@@ -9,4 +9,7 @@ cp -R .gitconfig .gitignore .gvimrc .irbrc .oh-my-zsh .tmux.conf .vim .vimrc .zs
 # apply tmux config
 tmux source ~/.tmux.conf
 
-rm -R ~/.git
+if [ -f ~/.git ]
+then
+    rm -R ~/.git
+fi
