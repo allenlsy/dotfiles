@@ -51,21 +51,29 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=/opt/local/bin:$PATH
 export PATH=/Users/allenlsy/bin:$PATH
 export PATH=/Users/allenlsy/android\ sdk/tools:/Users/allenlsy/android\ sdk/platform-tools:$PATH
+export Path=$PATH:/$HOME/.cask/bin
+export LANG=en_US.UTF-8 # This is for jekyll build
+export PGHOST=localhost # postgres config
 
-# postgres config
-export PGHOST=localhost
-
+# ALIAS
+#
 alias prodcomp="RAILS_ENV=production bundle exec rake assets:precompile"
 alias gpcap="git push -f && cap deploy"
 alias Rtest="RAILS_ENV=test"
 alias ta="tmux attach -t"
 alias trs="tmux rename-session"
 alias cpd="cap production deploy"
+alias csd="cap staging deploy"
 alias be='bundle exec'
 alias mex="open -a Emacs"
-export LANG=en_US.UTF-8 # This is for jekyll build
+alias mkd="open -a Marked"
 alias g="gradle"
 alias gitwc="git ls-files | xargs cat | wc -l"
+alias gt="gittower"
+alias c="pygmentize -O encoding=UTF-8 -O style=monokai -f console256 -g"
+alias STAGING="185.53.129.200"
+alias tree="tree -c"
+
 
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
 
@@ -96,3 +104,29 @@ export PATH=$ANT_ROOT:$PATH
 export ANDROID_SDK_ROOT=/Users/allenlsy/android sdk
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+# custom function to calculate dex methods in android project
+dexcount(){
+ `cp $1 $1+copy >/dev/null`
+ `mkdir temp >/dev/null`
+ `cp $1 temp/$1+copy > /dev/null`
+ `unzip temp/$1+copy > /dev/null`
+ cat temp/classes.dex | head -c 92 | tail -c 4 | hexdump -e '1/4 "%d\n"'
+ rm -R temp > /dev/null 
+}
+
+
+# Dash man page config
+export MANPATH=/Users/allenlsy/manpages:$MANPATH
+
+# LESS syntax highlight
+export LESS=' -R '
+export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+
+# EC2 CLI tools
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.1.1
+export PATH=$PATH:$EC2_HOME/bin
+export AWS_ACCESS_KEY=AKIAISBTEI3L6EVOS6AA
+export AWS_SECRET_KEY=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
+export JAVA_HOME=$(/usr/libexec/java_home)
+
