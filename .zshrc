@@ -46,7 +46,7 @@ plugins=(git ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/Users/allenlsy/projects/play/framework:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/allenlsy/.rvm/bin
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/allenlsy/.rvm/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=/opt/local/bin:$PATH
 export PATH=/Users/allenlsy/bin:$PATH
@@ -71,7 +71,6 @@ alias g="gradle"
 alias gitwc="git ls-files | xargs cat | wc -l"
 alias gt="gittower"
 alias c="pygmentize -O encoding=UTF-8 -O style=monokai -f console256 -g"
-alias STAGING="185.53.129.200"
 alias tree="tree -c"
 
 
@@ -126,7 +125,5 @@ export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 # EC2 CLI tools
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.1.1
 export PATH=$PATH:$EC2_HOME/bin
-export AWS_ACCESS_KEY=AKIAISBTEI3L6EVOS6AA
-export AWS_SECRET_KEY=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
 export JAVA_HOME=$(/usr/libexec/java_home)
 
