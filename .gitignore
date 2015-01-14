@@ -24,3 +24,12 @@ Thumbs.db
 
 tags
 *.iml
+
+# JAVA IGNORE
+*.class
+*.jar
+
+# NODEJS IGNORE
+node_modules/
+.tern-port
+

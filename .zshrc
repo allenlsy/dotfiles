@@ -71,7 +71,12 @@ alias g="gradle"
 alias gitwc="git ls-files | xargs cat | wc -l"
 alias gt="gittower"
 alias c="pygmentize -O encoding=UTF-8 -O style=monokai -f console256 -g"
-alias tree="tree -c"
+alias tree="tree -C"
+alias gp="git push"
+alias gc="git commit"
+alias gw="./gradlew"
+
+alias jcinvest="ssh 54.169.103.72"
 
 
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
@@ -111,7 +116,7 @@ dexcount(){
  `cp $1 temp/$1+copy > /dev/null`
  `unzip temp/$1+copy > /dev/null`
  cat temp/classes.dex | head -c 92 | tail -c 4 | hexdump -e '1/4 "%d\n"'
- rm -R temp > /dev/null 
+ rm -R temp > /dev/null
 }
 
 
@@ -125,5 +130,15 @@ export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 # EC2 CLI tools
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.1.1
 export PATH=$PATH:$EC2_HOME/bin
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA7_HOME=$(/usr/libexec/java_home -v 1.7)
+# export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$JAVA7_HOME
+
+
+# PYTHON
+export WORKON_HOME="$HOME/.virtualenvs"
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Android
+export ANDROID_HOME=/Users/allenlsy/android sdk
 
