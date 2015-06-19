@@ -144,3 +144,6 @@ export PATH=/Users/$USER/android\ sdk/tools:/Users/$USER/android\ sdk/platform-t
 
 # https://www.gitignore.io/docs
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+# swift
+export PATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/:$PATH
