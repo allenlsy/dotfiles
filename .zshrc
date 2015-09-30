@@ -1,3 +1,4 @@
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -41,11 +42,12 @@ DEFAULT_USER=$(whoami)
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby)
+plugins=(git ruby sublime osx rails web-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH=/opt/local/bin:$PATH
 export PATH=/Users/$USER/bin:$PATH
 export LANG=en_US.UTF-8 # This is for jekyll build
@@ -65,8 +67,9 @@ alias mkd="open -a Marked"
 alias g="gradle"
 alias gitwc="git ls-files | xargs cat | wc -l"
 alias gt="gittower"
-alias c="pygmentize -O encoding=UTF-8 -O style=monokai -f console256 -g" # install pygments using easy-install first
-alias tree="tree -C" # requre `brew install tree`
+# alias c="pygmentize -O encoding=UTF-8 -O style=monokai -f console256 -g"
+alias c="ccat"
+alias tree="tree -C"
 alias gw="./gradlew"
 alias sp="spring"
 alias spr="spring rails"
@@ -77,6 +80,8 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # PERSONAL CUSTOMIZATION, SAVED HERE
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
+
+alias jcinvest="ssh 54.169.103.72"
 
 # difffork git diff
 # export GIT_EXTERNAL_DIFF="/Users/$USER/gitdfdiff.sh"
@@ -119,7 +124,6 @@ dexcount(){
  rm -R temp > /dev/null
 }
 
-
 # Dash man page config
 export MANPATH=/Users/$USER/manpages:$MANPATH
 
@@ -145,5 +149,3 @@ export PATH=/Users/$USER/android\ sdk/tools:/Users/$USER/android\ sdk/platform-t
 # https://www.gitignore.io/docs
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
-# swift
-export PATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/:$PATH

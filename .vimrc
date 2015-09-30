@@ -1,13 +1,14 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
+filetype off
+set backspace=indent,eol,start
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 " ===============
 Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'jiangmiao/auto-pairs'
@@ -19,12 +20,11 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
-Plugin 'marijnh/tern_for_vim'
+" Plugin 'marijnh/tern_for_vim'
 Plugin 'tpope/vim-bundler'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'xolox/vim-colorscheme-switcher'
-Plugin 'skammer/vim-css-color'
-Plugin 'hail2u/vim-css3-syntax'
+Plugin 'ap/vim-css-color'
+" Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -40,28 +40,53 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'myhere/vim-nodejs-complete'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rvm'
 Plugin 'tristen/vim-sparkup'
 Plugin 'tpope/vim-surround'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'msanders/snipmate.vim'
-Plugin 'tpope/vim-cucumber':
-
+Plugin 'tpope/vim-cucumber'
+Plugin 'Yggdroot/indentLine'
+Plugin 'fatih/vim-go'
+Plugin 'Blackrush/vim-gocode'
+Plugin 'Shougo/neocomplcache.vim'
+" Plugin 'AutoComplPop'
+Plugin 'jimenezrick/vimerl'
+Plugin 'chriskempson/base16-vim'
+" Plugin 'msanders/snipmate.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'tfnico/vim-gradle'
+Plugin 'vim-jp/vim-cpp'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'slim-template/vim-slim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kchmck/vim-coffee-script'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+syntax enable
+filetype on                  " required
 filetype plugin indent on    " required
+
+" solve vim slow problem
+set ttyfast " u got a fast terminal
+set ttyscroll=3
+set lazyredraw " to avoid scrolling problems
 
 " Editor config
 " =============
 colorscheme Tomorrow-Night-Bright
+" set shell=/bin/sh
 set shell=/bin/zsh
 set t_Co=256
 set number
 set expandtab
-set tabstop=4
-set shiftwidth=4
+" set tabstop=2
+" set shiftwidth=2
 set autoindent
 set bg=dark
 set pastetoggle=<F2>
@@ -71,9 +96,13 @@ set fileencodings=utf-8
 set encoding=utf-8
 set hlsearch
 set cursorline
+set foldmethod=syntax
+set foldlevel=1
+set nofoldenable
+
 
 " auto create new parent folder after creating new file
-function s:MkNonExDir(file, buf)
+function! s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
         let dir=fnamemodify(a:file, ':h')
         if !isdirectory(dir)
@@ -99,9 +128,23 @@ let g:nerdtree_tabs_smart_startup_focus=2
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 au BufNewFile,BufRead *.hbs set filetype=html " handlebar template as html
-au FileType coffee :setlocal sw=2 ts=2 sts=2 " tab size=2 for coffeescript
-au FileType yml :setlocal sw=2 ts=2 sts=2 " tab size=2 for coffeescript
-au! FileType scss runtime! after/syntax/css.vim
+au BufNewFile,BufReadPost *.coffee setl sw=2 ts=2 sts=2 expandtab
+au FileType yml :set sw=2 ts=2 sts=2 " tab size=2 for yml
+au FileType ruby :set sw=2 ts=2 sts=2 " tab size=2 for ruby
+au FileType slim :set sw=2 ts=2 sts=2
+au BufNewFile,BufRead *.go set filetype=go
+au BufNewFile,BufRead *.md set filetype=markdown
+au FileType markdown :setlocal sw=4 ts=4 sts=4
+au FileType cpp :setlocal sw=4 ts=4 sts=4
+
+
+" C indent
+" ==========
+set cindent
+set cinoptions+=g0
+
+" IndentLine
+let g:indentLine_char = '│'
 
 
 " OmniCppComplete
@@ -122,20 +165,31 @@ set pumheight=15
 " let g:clang_complete_auto = 0
 " Show clang errors in the quickfix window
 let g:clang_complete_copen = 1
+" autocmd FileType cpp set omnifunc=omni#cpp#complete#Main
+
+
+" Tags
+" =====
+set tags+=~/.vim/wxwidgetstags
+
 
 " EasyMotion
 " ============
 let g:EasyMotion_leader_key = '<Leader>'
+
+" better white space
+" ==================
+augroup WhiteSpace
+    au!
+    au VimEnter * silent! ToggleStripWhitespaceOnSave
+augroup END
+
 
 " HTML format
 " ==============
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
-
-" CSS format
-" ==============
-let g:cssColorVimDoNotMessMyUpdatetime = 10
 
 " Rainbow Parentheses
 " ===================
@@ -187,8 +241,8 @@ endfunction
 
 function! MyFilename()
   return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
-        \  &ft == 'unite' ? unite#get_status_string() : 
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
         \  &ft == 'vimshell' ? vimshell#get_status_string() :
         \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
         \ ('' != MyModified() ? ' ' . MyModified() : '')
@@ -228,9 +282,9 @@ if &diff
     colorscheme kellys
 endif
 
-" tern-for-vim
-" =====================
-imap <C-J> <Plug>snipMateNextOrTrigger
+" snipmate config
+" ================
+" let g:snips_trigger_key = '<TAB>'
 
 " markdown from plasticboy
 " ====================
@@ -248,3 +302,8 @@ nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 " ==========
 let g:vim_json_syntax_conceal = 0
 
+" neocomplete
+" =============
+let g:neocomplcache_enable_at_startup = 1
+let g:acp_enableAtStartup = 1
+let g:acp_behaviorSnipmateLength = 3

@@ -23,6 +23,8 @@ Thumbs.db
 \#*
 
 tags
+.gemtags
+tags_sorted_by_file
 *.iml
 
 # JAVA IGNORE
@@ -32,4 +34,3 @@ tags
 # NODEJS IGNORE
 node_modules/
 .tern-port
-
