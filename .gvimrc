@@ -1,8 +1,14 @@
-set guifont=Source\ Code\ Pro:h12
-set transparency=18
+" set guifont=Source\ Code\ Pro:h13
+set guifont=ProFont:h12
+let g:indentLine_color_tty_light = 7
+let g:indentLine_char = '|'
+set transparency=10
+set linespace=2
+set lines=999 columns=999
 
 set macmeta
 set bg=dark
+color base16-tomorrow
 
 if has("gui_macvim")
 " In MacVim, you can have multiple tabs open. This mapping makes Ctrl-Tab

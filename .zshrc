@@ -1,3 +1,4 @@
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -41,13 +42,12 @@ DEFAULT_USER="allenlsy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby)
+plugins=(git ruby sublime osx rails web-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/allenlsy/.rvm/bin
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH=/opt/local/bin:$PATH
 export PATH=/Users/allenlsy/bin:$PATH
 export PATH=/Users/allenlsy/android\ sdk/tools:/Users/allenlsy/android\ sdk/platform-tools:$PATH
@@ -70,14 +70,16 @@ alias mkd="open -a Marked"
 alias g="gradle"
 alias gitwc="git ls-files | xargs cat | wc -l"
 alias gt="gittower"
-alias c="pygmentize -O encoding=UTF-8 -O style=monokai -f console256 -g"
+# alias c="pygmentize -O encoding=UTF-8 -O style=monokai -f console256 -g"
+alias c="ccat"
 alias tree="tree -C"
 alias gp="git push"
 alias gc="git commit"
 alias gw="./gradlew"
+alias sp="spring"
+alias spr="spring rails"
 
 alias jcinvest="ssh 54.169.103.72"
-
 
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
 
@@ -119,7 +121,6 @@ dexcount(){
  rm -R temp > /dev/null
 }
 
-
 # Dash man page config
 export MANPATH=/Users/allenlsy/manpages:$MANPATH
 
@@ -134,11 +135,13 @@ export JAVA7_HOME=$(/usr/libexec/java_home -v 1.7)
 # export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_HOME=$JAVA7_HOME
 
-
 # PYTHON
 export WORKON_HOME="$HOME/.virtualenvs"
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # Android
-export ANDROID_HOME=/Users/allenlsy/android sdk
+# export ANDROID_HOME=/Users/allenlsy/android sdk
 
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
