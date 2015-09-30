@@ -1,1 +1,1 @@
---exclude=.git --exclude=log
+--exclude=.git --exclude=log --exclude='*.js'
