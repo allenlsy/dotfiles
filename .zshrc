@@ -64,19 +64,21 @@ alias csd="cap staging deploy"
 alias be='bundle exec'
 alias mex="open -a Emacs"
 alias mkd="open -a Marked"
-alias g="gradle"
 alias gitwc="git ls-files | xargs cat | wc -l"
 alias gt="gittower"
 # alias c="pygmentize -O encoding=UTF-8 -O style=monokai -f console256 -g"
 alias c="ccat"
 alias tree="tree -C"
-alias gw="./gradlew"
 alias sp="spring"
 alias spr="spring rails"
+alias dc="docker-machine"
 
 # RVM
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/$USER/.rvm/bin
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/$USER/.rvm/bin
+# export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# RBENV
+eval "$(rbenv init -)"
 
 # PERSONAL CUSTOMIZATION, SAVED HERE
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
@@ -134,9 +136,9 @@ export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 # EC2 CLI tools
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.1.1
 export PATH=$PATH:$EC2_HOME/bin
-export JAVA7_HOME=$(/usr/libexec/java_home -v 1.7)
-export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
-export JAVA_HOME=$JAVA7_HOME
+# export JAVA7_HOME=$(/usr/libexec/java_home -v 1.7)
+# export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
+# export JAVA_HOME=$JAVA7_HOME
 
 # PYTHON
 # export WORKON_HOME="$HOME/.virtualenvs"
@@ -148,4 +150,7 @@ export PATH=/Users/$USER/android\ sdk/tools:/Users/$USER/android\ sdk/platform-t
 
 # https://www.gitignore.io/docs
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\"";  }
 

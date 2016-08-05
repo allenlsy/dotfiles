@@ -4,11 +4,11 @@ if [ "$(id -u)" != "0" ]; then
         exit 1
 fi
 
-if [ if ~/.vim ]; then
+if [ -f ~/.vim ]; then
         mv ~/.vim ~/.vim.bk
 fi
 
-if [ if ~/.oh-my-zsh ]; then
+if [ -f ~/.oh-my-zsh ]; then
         mv ~/.oh-my-zsh ~/.oh-my-zsh.bk
 fi
 
