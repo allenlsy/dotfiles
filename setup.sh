@@ -7,7 +7,7 @@
 # brew
 brew tap caskroom/cask
 brew install git zsh ccat vim ctags rbenv nodejs hub redis postgresql docker tree
-brew cask install iterm2 google-chrome dropbox sublime-text java  postgresql docker docker-toolbox
+brew cask install iterm2 google-chrome dropbox sublime-text java  postgresql docker docker-toolbox slack
 chsh -s /bin/zsh
 
 # ruby
