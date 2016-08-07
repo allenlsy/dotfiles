@@ -71,7 +71,7 @@ alias c="ccat"
 alias tree="tree -C"
 alias sp="spring"
 alias spr="spring rails"
-alias dc="docker-machine"
+alias dc="docker-compose"
 
 # RVM
 # export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/$USER/.rvm/bin
