@@ -73,13 +73,6 @@ alias sp="spring"
 alias spr="spring rails"
 alias dc="docker-compose"
 
-# RVM
-# export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/$USER/.rvm/bin
-# export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# RBENV
-eval "$(rbenv init -)"
-
 # PERSONAL CUSTOMIZATION, SAVED HERE
 if [ -f ~/.privaterc ]; then source ~/.privaterc; fi
 
@@ -153,4 +146,12 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\"";  }
+
+# RVM
+# export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/$USER/.rvm/bin
+# export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# RBENV
+eval "$(rbenv init -)"
+
 
